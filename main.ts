@@ -136,6 +136,9 @@ export default class SuperchargedLinks extends Plugin {
 			plugin.registerViewType('notebook-navigator', plugin, 'span.nn-shortcut-label');
 			plugin.registerViewType('notebook-navigator', plugin, 'div.nn-file-name');
 		}
+		if (plugin.app?.plugins?.plugins?.['virtual-footer']) {
+			plugin.registerViewType('virtual-footer', plugin, 'virtual-content-sidebar-view', true);
+		}
 	}
 
 	initModalObservers(plugin: SuperchargedLinks, doc: Document) {
